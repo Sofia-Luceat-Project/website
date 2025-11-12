@@ -26,8 +26,7 @@ DLCは、追加のストーリーやモード、さらなる拡張内容を提�
 # 配布
 アルファバージョンを配布しています。これは開発バージョンであり、沢山のバグや機能不足があります。
 もし開発の手助けをしていただける方は、こちらのリンクから開発バージョンをダウンロードし、このサイトのコメント欄などでコメントを頂けると嬉しいです！
-::link-card{url="https://github.com/Sofia-Luceat-Project/release/releases/tag/dark-survivor-version-0.0.1-alpha
-" title="リリース" description="楽しんじゃうぞ！"}
+::link-card{url="https://github.com/Sofia-Luceat-Project/release/releases/tag/dark-survivor-version-0.0.1-alpha" title="リリース" description="楽しんじゃうぞ！"}
 
 # 連絡先
 - こちらのコメント欄
