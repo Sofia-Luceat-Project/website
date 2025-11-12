@@ -1,12 +1,11 @@
 ---
 title: dark-survivor
 published: 2025-11-12
-description: ''
-image: ''
-tags: ["サークル", "ゲーム", "公開", "その他"]
-category: 'Release'
+image:
+tags: [サークル, ゲーム, 公開, その他]
+category: Release
 draft: false
-lang: ''
+series: ゲーム開発
 ---
 # dark-survivorについて
 dark-survivorとは、ヴァンサバに影響を受けた2D Retro RPG世界観のゲームです。
@@ -27,6 +26,8 @@ DLCは、追加のストーリーやモード、さらなる拡張内容を提�
 # 配布
 アルファバージョンを配布しています。これは開発バージョンであり、沢山のバグや機能不足があります。
 もし開発の手助けをしていただける方は、こちらのリンクから開発バージョンをダウンロードし、このサイトのコメント欄などでコメントを頂けると嬉しいです！
+::link-card{url="https://github.com/Sofia-Luceat-Project/release/releases/tag/dark-survivor-version-0.0.1-alpha
+" title="リリース" description="楽しんじゃうぞ！"}
 
 # 連絡先
 - こちらのコメント欄
