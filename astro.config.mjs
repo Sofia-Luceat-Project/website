@@ -40,7 +40,7 @@ export default defineConfig({
     defaultStrategy: "hover",
   },
 
-  site: "https://sl-project.duckdns.org/",
+  site: "https://sofia-luceat-project.github.io",
   base: "/",
   trailingSlash: "always",
 
