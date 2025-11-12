@@ -1,0 +1,33 @@
+version: 2
+updates:
+  # npm エコシステム (pnpm で管理されている package.json の依存関係を対象)
+  - package-ecosystem: "npm"
+    # リポジトリのルートディレクトリを対象
+    directory: "/"
+    # 毎日依存関係の更新をチェック
+    schedule:
+      interval: "daily"
+
+    # マイナー更新とパッチ更新をそれぞれグループ化し、プルリクエストの数を減らす
+    groups:
+      patch-updates:
+        # すべての依存関係のパッチ更新を対象
+        patterns:
+          - "*"
+        update-types:
+          - "patch"
+      minor-updates:
+        # すべての依存関係のマイナー更新を対象
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+
+    # プルリクエストのブランチ名を「dependabot-npm-minor-updates」のようにハイフン区切りで作成
+    pull-request-branch-name:
+      separator: "-"
+
+    # メジャーバージョンアップのプルリクエストは無視し、手動での対応を促す
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
