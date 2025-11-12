@@ -2,48 +2,53 @@ name: Deploy Astro Site to GitHub Pages (External Repository)
 
 on:
   push:
-    # サイトのソースコードがあるブランチ（例: main）にプッシュされたときに実行
     branches:
       - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    # ソースリポジトリのコードを読み取るための権限設定
     permissions:
       contents: read
 
     steps:
       - name: Checkout repository
-        # ソースリポジトリのコードをチェックアウト
         uses: actions/checkout@v3
 
+      # --- 修正・追加ステップ ---
       - name: Set up Node.js
-        # pnpm/Astro に必要な Node.js 環境をセットアップ
+        # pnpm のインストールは次のステップで行うため、ここでは pure な Node.js の設定のみ
         uses: actions/setup-node@v3
         with:
-          node-version: "20"
-          pnpm-version: 'latest' # 最新版のpnpmをインストール
+          node-version: '20'
+          # cache: 'pnpm' を削除し、次の actions/cache で独立させます
+
+      # pnpm を確実にインストールし、PATHに追加
+      - name: Install pnpm globally
+        run: npm install -g pnpm
+
+      # pnpm の依存関係キャッシュを明示的に設定
+      - name: Cache pnpm modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+      # ------------------------
 
       - name: Install pnpm dependencies
-        # pnpm を使用して依存関係をインストール
+        # pnpm コマンドは上記ステップで確実にインストール済み
         run: pnpm install --frozen-lockfile
 
       - name: Build Astro static site
-        # Astroプロジェクトをビルド。デフォルトでは 'dist' ディレクトリに出力されます。
         run: pnpm run build
 
       - name: Deploy to GitHub Pages on external repository
-        # peaceiris/actions-gh-pages を使用して外部リポジトリへデプロイ
         uses: peaceiris/actions-gh-pages@v3
         with:
-          # デプロイ先リポジトリへの書き込み権限を持つPATシークレットを使用
           personal_token: ${{ secrets.GH_PAGES_PAT }}
-          # ビルド成果物 (Astroのデフォルト出力ディレクトリ)
           publish_dir: ./dist
-          # ターゲットリポジトリ名 (GitHub Pagesとして使用されるリポジトリ)
           external_repository: Sofia-Luceat-Project/Sofia-Luceat-Project.github.io
-          # ターゲットリポジトリのブランチ名
           publish_branch: main
-          # デプロイ履歴を残す設定
           force_orphan: true
