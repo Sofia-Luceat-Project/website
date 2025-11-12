@@ -1,7 +1,7 @@
 ---
 title: dark-survivor
 published: 2025-11-12
-image:
+image: ""
 tags: [サークル, ゲーム, 公開, その他]
 category: Release
 draft: false
