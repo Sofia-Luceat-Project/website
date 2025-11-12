@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "20"
-          cache: "pnpm"
+          pnpm-version: 'latest' # 最新版のpnpmをインストール
 
       - name: Install pnpm dependencies
         # pnpm を使用して依存関係をインストール
