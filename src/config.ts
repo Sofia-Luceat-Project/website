@@ -19,7 +19,7 @@ export const siteConfig: SiteConfig = {
     src: "/137103134master1200.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
     position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
     credit: {
-      enable: false, // Display the credit text of the banner image
+      enable: true, // Display the credit text of the banner image
       text: "Pixiv @chokei", // Credit text to be displayed
       url: "https://www.pixiv.net/artworks/122782209", // (Optional) URL link to the original artwork or artist's page
     },
