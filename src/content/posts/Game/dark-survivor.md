@@ -2,10 +2,10 @@
 title: dark-survivor
 published: 2025-11-12
 image: ""
-tags: [サークル, ゲーム, 公開, その他]
+tags: [ゲーム, 紹介, 公開, 配布]
 category: Release
 draft: false
-series: ゲーム開発
+series: ゲーム
 ---
 # dark-survivorについて
 dark-survivorとは、ヴァンサバに影響を受けた2D Retro RPG世界観のゲームです。

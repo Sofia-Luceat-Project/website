@@ -20,8 +20,8 @@ export const siteConfig: SiteConfig = {
     position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
     credit: {
       enable: true, // Display the credit text of the banner image
-      text: "Pixiv @chokei", // Credit text to be displayed
-      url: "https://www.pixiv.net/artworks/122782209", // (Optional) URL link to the original artwork or artist's page
+      text: "Pixiv @void_0", // Credit text to be displayed
+      url: "https://www.pixiv.net/artworks/137103134", // (Optional) URL link to the original artwork or artist's page
     },
   },
   toc: {
