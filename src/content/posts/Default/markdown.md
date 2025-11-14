@@ -1,7 +1,7 @@
 ---
-title: Markdown Example
+title: Markdownの例
 published: 1001-10-01
-description: A simple example of a Markdown blog post.
+description: Markdownブログ投稿の簡単な例。
 image: "https://api.boxmoe.com/random.php"
 tags: [Markdown, Blogging, Demo]
 category: Default
@@ -9,64 +9,39 @@ draft: false
 series: Examples
 ---
 
-# An h1 header
-# 一级标题
+# h1ヘッダー
 
-Paragraphs are separated by a blank line.
-段落之间用空行分隔。
+段落は空行で区切られます。
 
-2nd paragraph. _Italic_, **bold**, and `monospace`. Itemized lists
-look like:
-第二段。*斜体*，**粗体**，和`等宽字体`。项目列表看起来像这样：
+2番目の段落。_イタリック_、**太字**、そして`等幅フォント`。箇条書きリストは次のようになります：
 
-- this one
-- 这一个
-- that one
-- 那一个
-- the other one
-- 另一个
+- これ
+- それ
+- もう一つ
 
-Note that --- not considering the asterisk --- the actual text
-content starts at 4-columns in.
-请注意 --- 不考虑星号 --- 实际文本内容从第4列开始。
+アスタリスクを考慮しないと、実際のテキスト内容は4列目から始まることに注意してください。
 
-> Block quotes are
-> written like so.
+> 引用ブロックは
+> このように書きます。
 >
-> They can span multiple paragraphs,
-> if you like.
-> 引用块是这样写的。
-> 
-> 如果你愿意，它们可以跨越多段。
+> 必要であれば、複数段落にまたがることもできます。
 
-Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
-in chapters 12--14"). Three dots ... will be converted to an ellipsis.
-Unicode is supported. ☺
-使用三个连字符表示长破折号。使用两个连字符表示范围（例如："都在12-14章"）。三个点...将被转换为省略号。支持Unicode。☺
+エムダッシュには3つのダッシュを使用します。範囲には2つのダッシュを使用します（例：「それはすべて12-14章にあります」）。3つのドット...は省略記号に変換されます。Unicodeもサポートされています。☺
 
-## An h2 header
-## 二级标题
+## h2ヘッダー
 
-Here's a numbered list:
-这是一个有序列表：
+これは番号付きリストです：
 
-1. first item
-1. 第一项
-2. second item
-2. 第二项
-3. third item
-3. 第三项
+1. 最初の項目
+2. 2番目の項目
+3. 3番目の項目
 
-Note again how the actual text starts at 4 columns in (4 characters
-from the left side). Here's a code sample:
-再次注意实际文本如何从第4列开始（距左侧4个字符）。这是一个代码示例：
+ここでも、実際のテキストが4列目から始まることに注意してください（左側から4文字）。これはコードサンプルです：
 
-    # Let me re-iterate ...
+    # もう一度言いますが...
     for i in 1 .. 10 { do-something(i) }
 
-As you probably guessed, indented 4 spaces. By the way, instead of
-indenting the block, you can use delimited blocks, if you like:
-如你所料，缩进4个空格。顺便说一句，如果你愿意，可以使用定界块代替缩进块：
+ご想像の通り、4スペースでインデントされています。ちなみに、ブロックをインデントする代わりに、区切りブロックを使用することもできます：
 
 ```
 define foobar() {
@@ -74,144 +49,104 @@ define foobar() {
 }
 ```
 
-(which makes copying & pasting easier). You can optionally mark the
-delimited block for Pandoc to syntax highlight it:
-（这使得复制粘贴更容易）。你可以选择标记定界块以便Pandoc进行语法高亮：
+（これにより、コピー＆ペーストが容易になります）。Pandocに構文ハイライトさせるために、区切りブロックを任意でマークすることもできます：
 
 ```python
 import time
-# Quick, count to ten!
+# さあ、10まで数えよう！
 for i in range(10):
-    # (but not *too* quick)
+    # (でも、*速すぎず*)
     time.sleep(0.5)
     print i
 ```
 
-### An h3 header
-### 三级标题
+### h3ヘッダー
 
-Now a nested list:
-现在是一个嵌套列表：
+次はネストされたリストです：
 
-1. First, get these ingredients:
-1. 首先，准备这些材料：
+1. まず、これらの材料を手に入れます：
 
-    - carrots
-    - 胡萝卜
-    - celery
-    - 芹菜
-    - lentils
-    - 扁豆
+    - にんじん
+    - セロリ
+    - レンズ豆
 
-2. Boil some water.
-2. 烧开一些水。
+2. お湯を沸かします。
 
-3. Dump everything in the pot and follow
-    this algorithm:
-3. 将所有东西倒入锅中，并按照以下算法操作：
+3. すべてを鍋に入れ、このアルゴリズムに従います：
 
-        find wooden spoon
-        uncover pot
-        stir
-        cover pot
-        balance wooden spoon precariously on pot handle
-        wait 10 minutes
-        goto first step (or shut off burner when done)
+        木のスプーンを見つける
+        鍋の蓋を開ける
+        かき混ぜる
+        鍋の蓋をする
+        木のスプーンを鍋の取っ手に危なっかしく置く
+        10分待つ
+        最初のステップに戻る（または、終わったら火を止める）
 
-    Do not bump wooden spoon or it will fall.
-    不要碰木勺，否则它会掉下来。
+    木のスプーンにぶつからないようにしてください。落ちてしまいます。
 
-Notice again how text always lines up on 4-space indents (including
-that last line which continues item 3 above).
-再次注意文本如何在4空格缩进处对齐（包括上面继续第3项的最后一行）。
+ここでも、テキストが常に4スペースのインデントで揃っていることに注意してください（上記の項目3を続ける最後の行も同様です）。
 
-Here's a link to [a website](http://foo.bar), to a [local
-doc](local-doc.html), and to a [section heading in the current
-doc](#an-h2-header). Here's a footnote [^1].
-这是一个指向[网站](http://foo.bar)的链接，指向[本地文档](local-doc.html)的链接，以及指向[当前文档中的章节标题](#an-h2-header)的链接。这是一个脚注[^1]。
+これは[ウェブサイト](http://foo.bar)へのリンク、[ローカルドキュメント](local-doc.html)へのリンク、そして[現在のドキュメントのセクション見出し](#an-h2-header)へのリンクです。これは脚注です[^1]。
 
-[^1]: Footnote text goes here.
-[^1]: 脚注文本放在这里。
+[^1]: 脚注のテキストはここに書きます。
 
-Tables can look like this:
-表格可以像这样：
+テーブルは次のようになります：
 
-size material color
+サイズ 素材 色
 
 ---
 
-9 leather brown
-10 hemp canvas natural
-11 glass transparent
+9 レザー ブラウン
+10 ヘンプキャンバス ナチュラル
+11 ガラス 透明
 
-Table: Shoes, their sizes, and what they're made of
-表格：鞋子、尺寸及材质
+表：靴、そのサイズ、および素材
 
-(The above is the caption for the table.) Pandoc also supports
-multi-line tables:
-（以上是表格的标题。）Pandoc也支持多行表格：
+（上記は表のキャプションです。）Pandocは複数行のテーブルもサポートしています：
 
 ---
 
-keyword text
+キーワード テキスト
 
 ---
 
-red Sunsets, apples, and
-other red or reddish
-things.
+赤 夕日、りんご、その他
+赤または赤みがかったもの。
 
-green Leaves, grass, frogs
-and other things it's
-not easy being.
-
----
-
-A horizontal rule follows.
-接下来是一条水平线。
+緑 葉、草、カエル
+そして、それであることは
+簡単ではない他のもの。
 
 ---
 
-Here's a definition list:
-这是一个定义列表：
+次に水平線が続きます。
 
-apples
-: Good for making applesauce.
-苹果
-: 适合做苹果酱。
+---
 
-oranges
-: Citrus!
-橙子
-: 柑橘类水果！
+これは定義リストです：
 
-tomatoes
-: There's no "e" in tomatoe.
-番茄
-: "tomato"中没有"e"。
+りんご
+: アップルソースを作るのに適しています。
 
-Again, text is indented 4 spaces. (Put a blank line between each
-term/definition pair to spread things out more.)
-同样，文本缩进4个空格。（在每个术语/定义对之间加空行可以使内容更分散。）
+オレンジ
+: 柑橘類！
 
-Here's a "line block":
-这是一个"行块"：
+トマト
+: "tomatoe"に"e"はありません。
 
-| Line one
-| 第一行
-| Line too
-| 第二行
-| Line tree
-| 第三行
+ここでも、テキストは4スペースでインデントされています。（各用語/定義ペアの間に空行を入れると、より見やすくなります。）
 
-and images can be specified like so:
-图片可以这样指定：
+これは「ラインブロック」です：
 
-[//]: # (![example image]&#40;./demo-banner.png "An exemplary image"&#41;)
+| 1行目
+| 2行目
+| 3行目
 
-Inline math equations go in like so: $\omega = d\phi / dt$. Display
-math should get its own line and be put in in double-dollarsigns:
-行内数学公式这样插入：$\omega = d\phi / dt$。显示数学应独占一行并用双美元符号包围：
+画像は次のように指定できます：
+
+[//]: # (![サンプル画像](./demo-banner.png "模範的な画像"))
+
+インライン数式はこのように記述します：$\omega = d\phi / dt$。ディスプレイ数式は独立した行にし、二重ドル記号で囲む必要があります：
 
 $$I = \int \rho R^{2} dV$$
 
@@ -224,6 +159,4 @@ $$
 \end{equation*}
 $$
 
-And note that you can backslash-escape any punctuation characters
-which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
-并且注意，你可以用反斜杠转义任何你想原样显示的标点字符，例如：\`foo\`, \*bar\*等。
+また、文字通りに表示したい句読点文字は、バックスラッシュでエスケープできることに注意してください。例：\`foo\`、\*bar\*など。

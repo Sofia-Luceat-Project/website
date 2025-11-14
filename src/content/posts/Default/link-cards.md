@@ -1,42 +1,38 @@
 ---
-title: Link Cards Example
+title: リンクカードの例
 published: 2025-02-23T00:00:00+00:00
-description: Guide to using the link card feature.
+description: リンクカード機能の使用ガイド。
 tags: [Markdown, Blogging, Demo]
 category: Default
 draft: false
 series: Examples
 ---
 
-## About Link Cards  
-## 关于链接卡片
+## リンクカードについて
 
-Link Cards are similar to the `<LinkCard>` component in [Starlight](https://starlight.astro.build), displaying links in a card format.  
-链接卡片类似于 [Starlight](https://starlight.astro.build) 中的 `<LinkCard>` 组件，以卡片形式展示链接。
+リンクカードは [Starlight](https://starlight.astro.build) の `<LinkCard>` コンポーネントに似ており、リンクをカード形式で表示します。
 
-## Usage  
 ## 使用方法
-> 现已更新,调用方法如下
-### 自定义标题和描述
+> 更新され、呼び出し方法は以下のようになりました
+
+### カスタムタイトルと説明
 ```
 ::link-card{url="https://fuwari.oh1.top" title="yCENzh's Blog" description="Ciallo~"}
 ```
 ::link-card{url="https://fuwari.oh1.top" title="yCENzh's Blog" description="Ciallo~"}
 
-### 带图片
+### 画像付き
 ```
 ::link-card{url="https://github.com" title="Github" description="Hello World!" icon="https://github.com/github.png"}
 ```
 ::link-card{url="https://github.com" title="Github" description="Hello World!" icon="https://github.com/github.png"}
 
-> 下列均已失效
+> 以下はすべて無効になりました
 
-Include only a single "bare" link (a link without descriptive text), or something similar, within a paragraph in Markdown, and it will automatically be converted into a Link Card.  
-在 Markdown 段落中仅包含一个"裸链接"（无描述文本的纯 URL）或类似结构，它将自动转换为链接卡片。
+Markdownの段落内に「裸の」リンク（説明文のないリンク）などを一つだけ含めると、自動的にリンクカードに変換されます。
 
 ```markdown
-**External Links**  
-**外部链接**
+**外部リンク**
 
 https://astro.build/
 
@@ -44,16 +40,13 @@ https://astro.build/
 
 [https://fuwari.oh1.top/](https://fuwari.oh1.top/)
 
-**Internal Links**  
-**内部链接**
+**内部リンク**
 
 [/archive/](/archive/)
 
-For more details, see the internalLink option section.  
-更多细节请参见 internalLink 选项部分。
+詳細については、internalLinkオプションのセクションを参照してください。
 
-**IDN (Internationalized Domain Name)**  
-**IDN（国际化域名）**
+**IDN（国際化ドメイン名）**
 
 https://はじめよう.みんな/
 ```
@@ -68,16 +61,12 @@ https://astro.build/
 
 https://はじめよう.みんな/
 
-> [!NOTE]  
-> 注意
-> Once the cards are displayed, try changing the theme color or enabling dark mode!  
-> 卡片显示后，请尝试更改主题颜色或启用暗黑模式！
+> [!NOTE]
+> カードが表示されたら、テーマカラーを変更したり、ダークモードを有効にしてみてください！
 
-## Options  
-## 配置选项
+## 設定オプション
 
-You can specify the options in the `astro.config.mjs` file.  
-您可以在 `astro.config.mjs` 文件中指定配置选项。
+オプションは `astro.config.mjs` ファイルで指定できます。
 
 ```javascript
 ...
@@ -87,12 +76,11 @@ export default defineConfig({
   ...
   integrations: [
     ...
-    fuwariLinkCard(), // Plugin here // 在此处添加插件
+    fuwariLinkCard(), // ここにプラグインを追加
     ...
 ```
 
-If the order of plugins is complex, you can also specify it as a remark plugin.  
-如果插件顺序较复杂，也可将其指定为 remark 插件。
+プラグインの順序が複雑な場合は、remark プラグインとして指定することもできます。
 
 ```javascript
 ...
@@ -104,51 +92,36 @@ export default defineConfig({
     ...
     remarkPlugins: [
       ...
-      remarkLinkCard, // Plugin here // 在此处添加插件
+      remarkLinkCard, // ここにプラグインを追加
       ...
 ```
 
-| Name             | Type            | Default                                                                                                                                        | Description                                                                                                                                                                                                                                                                    |  
+| 名前             | 型            | デフォルト                                                                                                                                        | 説明                                                                                                                                                                                                                                                                    |
 |------------------|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| devMode          | boolean         | [import.meta.env.DEV](https://docs.astro.build/en/guides/environment-variables/#default-environment-variables "Default environment variables") | Enable or disable development mode.                                                                                                                                                                                                                                            |
-|                  |                 |                                                                                                                                                | 启用或禁用开发模式                                                                                                                                                                                                                                                            |
-| excludedUrls     | Array<string \| RegExp> | []                                                                                                                                             | A list of strings or regular expressions to exclude specific URLs from processing. This can also help prevent conflicts with other plugins.                                                                                                                                    |
-|                  |                 |                                                                                                                                                | 用于排除特定 URL 的字符串或正则表达式列表，可防止与其他插件冲突                                                                                                                                                                                                                |
-| linkAttributes   | Object          | { target: '', rel: '' }                                                                                                                        | Set the target and relationship attributes for external links. These attributes can also be left unset to delegate handling to other plugins.                                                                                                                                  |
-|                  |                 |                                                                                                                                                | 设置外部链接的 target 和 rel 属性，留空可交由其他插件处理                                                                                                                                                                                                                     |
-| rewriteRules     | Array\<Object\> | []                                                                                                                                             | Rewrite specific metadata attributes fetched from links, such as the title and description.                                                                                                                                                                                    |
-|                  |                 |                                                                                                                                                | 重写从链接获取的特定元数据属性（如标题和描述）                                                                                                                                                                                                                                |
-| base             | string          | '/'                                                                                                                                            | Specify the same base path as Astro's. For details, refer [here](https://docs.astro.build/en/reference/configuration-reference/#base "Configuration Reference"). **When used as an integration, if not specified, this option will be determined automatically.**              |
-|                  |                 |                                                                                                                                                | 指定与 Astro 相同的基准路径（[详情](https://docs.astro.build/en/reference/configuration-reference/#base)）。**作为集成使用时，如未指定将自动确定**                                                                                                                              |
-| defaultThumbnail | string          | ''                                                                                                                                             | Path to the default thumbnail image to use when the metadata does not include image data. It should be relative to the public directory. For example, set `defaultThumbnail` to 'images/default-thumbnail.jpg' if the image is located at public/images/default-thumbnail.jpg. |
-|                  |                 |                                                                                                                                                | 当元数据不含图片时使用的默认缩略图路径（相对于 public 目录）。例如：图片在 public/images/default-thumbnail.jpg 时设为 'images/default-thumbnail.jpg'                                                                                                                              |
-| internalLink     | Object          | { enabled: false, site: '' }                                                                                                                   | Enable internal link processing within your site.                                                                                                                                                                                                                              |
-|                  |                 |                                                                                                                                                | 启用站点内部链接处理                                                                                                                                                                                                                                                          |
-| cache            | Object          | See detailed options below.                                                                                                                    | Download and cache images during the build process.                                                                                                                                                                                                                            |
-|                  |                 |                                                                                                                                                | 在构建过程中下载并缓存图片                                                                                                                                                                                                                                                    |
+| devMode          | boolean         | [import.meta.env.DEV](https://docs.astro.build/en/guides/environment-variables/#default-environment-variables "Default environment variables") | 開発モードを有効または無効にします。                                                                                                                                                                                                                                            |
+| excludedUrls     | Array<string \| RegExp> | []                                                                                                                                     | 特定のURLを処理から除外するための文字列または正規表現のリスト。これは他のプラグインとの競合を防ぐのにも役立ちます。                                                                                                                                    |
+| linkAttributes   | Object          | { target: '', rel: '' }                                                                                                                        | 外部リンクのターゲットと関係属性を設定します。これらの属性を未設定のままにして、他のプラグインに処理を委任することもできます。                                                                                                                                  |
+| rewriteRules     | Array\<Object\> | []                                                                                                                                             | タイトルや説明など、リンクから取得した特定のメタデータ属性を書き換えます。                                                                                                                                                                                                                   |
+| base             | string          | '/'                                                                                                                                            | Astroと同じベースパスを指定します。詳細は[こちら](https://docs.astro.build/en/reference/configuration-reference/#base "Configuration Reference")を参照してください。**インテグレーションとして使用する場合、指定しないと自動的に決定されます。**              |
+| defaultThumbnail | string          | ''                                                                                                                                             | メタデータに画像データが含まれていない場合に使用するデフォルトのサムネイル画像のパス。publicディレクトリからの相対パスである必要があります。例えば、画像がpublic/images/default-thumbnail.jpgにある場合、`defaultThumbnail`を'images/default-thumbnail.jpg'に設定します。 |
+| internalLink     | Object          | { enabled: false, site: '' }                                                                                                                   | サイト内の内部リンク処理を有効にします。                                                                                                                                                                                                                              |
+| cache            | Object          | 以下の詳細オプションを参照してください。                                                                                                                    | ビルドプロセス中に画像をダウンロードしてキャッシュします。                                                                                                                                                                                                                                                    |
 
-### linkAttributes  
-### 链接属性配置
+### リンク属性の設定
 
-| Name   | Type   | Default | Description                                                                                                                      |  
+| 名前   | 型   | デフォルト | 説明                                                                                                                      |
 |--------|--------|---------|----------------------------------------------------------------------------------------------------------------------------------|
-| target | string | ''      | Specify where to open linked documents. The default (empty) does not set a target on links.                                      |
-|        |        |         | 指定链接文档打开位置（默认留空不设置 target）                                                                                    |
-| rel    | string | ''      | Define the relationship between the current document and the linked document. The default (empty) does not set any relationship. |
-|        |        |         | 定义当前文档与链接文档的关系（默认留空不设置 rel）                                                                               |
+| target | string | ''      | リンクされたドキュメントを開く場所を指定します。デフォルト（空）では、リンクにターゲットは設定されません。                                      |
+| rel    | string | ''      | 現在のドキュメントとリンクされたドキュメントの関係を定義します。デフォルト（空）では、関係は設定されません。 |
 
-### rewriteRules  
-### 重写规则
+### 書き換えルール
 
-| Name         | Type            | Default | Description                                                   |  
+| 名前         | 型            | デフォルト | 説明                                                   |
 |--------------|-----------------|---------|---------------------------------------------------------------|
-| url          | RegExp          |         | A regular expression pattern is used to match a specific URL. |
-|              |                 |         | 用于匹配特定 URL 的正则表达式模式                             |
-| rewriteSteps | Array\<Object\> |         | Defines rewrite rules for specific metadata attributes.       |
-|              |                 |         | 定义特定元数据属性的重写规则                                  |
+| url          | RegExp          |         | 特定のURLに一致させるために使用される正規表現パターン。 |
+| rewriteSteps | Array\<Object\> |         | 特定のメタデータ属性の書き換えルールを定義します。       |
 
-Below is an example that shows how to rewrite the "title" and "description" for metadata fetched from links pointing to a GitHub repository.  
-以下示例展示如何重写 GitHub 仓库链接的 "title" 和 "description" 元数据：
+以下は、GitHubリポジトリを指すリンクから取得したメタデータの「title」と「description」を書き換える方法を示す例です。
 
 ```javascript
 rewriteRules: [
@@ -171,56 +144,39 @@ rewriteRules: [
 ],
 ```
 
-| Name        | Type   | Default | Description                                                                                                                                             |  
+| 名前        | 型   | デフォルト | 説明                                                                                                                                             |
 |-------------|--------|---------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| key         | string |         | Metadata attribute key to be rewritten.                                                                                                                 |
-|             |        |         | 要重写的元数据属性键名                                                                                                                                  |
-| pattern     | RegExp |         | Regular expression pattern used to match the current value of the metadata attribute. The part of the value that matches this pattern will be replaced. |
-|             |        |         | 用于匹配元数据属性当前值的正则表达式，匹配部分将被替换                                                                                                  |
-| replacement | string |         | String to replace the matched pattern in the metadata attribute.                                                                                        |
-|             |        |         | 替换元数据属性中匹配项的字符串                                                                                                                          |
+| key         | string |         | 書き換えられるメタデータ属性のキー。                                                                                                                                  |
+| pattern     | RegExp |         | メタデータ属性の現在の値に一致させるために使用される正規表現パターン。このパターンに一致する値の部分が置換されます。 |
+| replacement | string |         | メタデータ属性で一致したパターンを置換する文字列。                                                                                        |
 
-### internalLink  
-### 内部链接配置
+### 内部リンクの設定
 
-| Name    | Type    | Default | Description                                                                                                                                                                                                                                                          |  
+| 名前    | 型    | デフォルト | 説明                                                                                                                                                                                                                                                          |
 |---------|---------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| enabled | boolean | false   | Enable or disable internal link processing.                                                                                                                                                                                                                          |
-|         |         |         | 启用或禁用内部链接处理                                                                                                                                                                                                                                               |
-| site    | string  | ''      | Specify the same deployed URL as Astro's. For details, refer [here](https://docs.astro.build/en/reference/configuration-reference/#site "Configuration Reference"). **When used as an integration, if not specified, this option will be determined automatically.** |
-|         |         |         | 指定与 Astro 相同的部署 URL（[详情](https://docs.astro.build/en/reference/configuration-reference/#site)）。**作为集成使用时，如未指定将自动确定**                                                                                                                      |
+| enabled | boolean | false   | 内部リンク処理を有効または無効にします。                                                                                                                                                                                                                          |
+| site    | string  | ''      | Astroと同じデプロイ済みURLを指定します。詳細は[こちら](https://docs.astro.build/en/reference/configuration-reference/#site "Configuration Reference")を参照してください。**インテグレーションとして使用する場合、指定しないと自動的に決定されます。** |
 
-### cache  
-### 缓存配置
+### キャッシュ設定
 
-| Name         | Type    | Default                                                                                                           | Description                                                                                                                                                                                                                              |  
+| 名前         | 型    | デフォルト                                                                                                           | 説明                                                                                                                                                                                                                              |
 |--------------|---------|-------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| enabled      | boolean | false                                                                                                             | Enable or disable caching.                                                                                                                                                                                                               |
-|              |         |                                                                                                                   | 启用或禁用缓存                                                                                                                                                                                                                           |
-| outDir       | string  | './dist/'                                                                                                         | Output directory path.  For details, refer [here](https://docs.astro.build/en/reference/configuration-reference/#outdir "Configuration Reference"). **Aligning with Astro allows you to benefit from features like image optimization.** |
-|              |         |                                                                                                                   | 输出目录路径（[详情](https://docs.astro.build/en/reference/configuration-reference/#outdir)）。**与 Astro 对齐可享受图片优化等功能**                                                                                                       |
-| cacheDir     | string  | './link-card/'                                                                                                    | Cache directory path. If `devMode` is set to true, the final URL to the cached images will be `base + outDir + cacheDir`. Otherwise, it will be `base + cacheDir`.                                                                       |
-|              |         |                                                                                                                   | 缓存目录路径。`devMode=true` 时最终 URL 为 `base + outDir + cacheDir`，否则为 `base + cacheDir`                                                                                                                                           |
-| maxFileSize  | number  | 0                                                                                                                 | Maximum file size (in bytes) to cache. Set to 0 for no limit.                                                                                                                                                                            |
-|              |         |                                                                                                                   | 单文件最大缓存大小（字节），0 表示无限制                                                                                                                                                                                                 |
-| maxCacheSize | number  | 0                                                                                                                 | Maximum total cache size (in bytes). Set to 0 for no limit.                                                                                                                                                                              |
-|              |         |                                                                                                                   | 缓存总大小上限（字节），0 表示无限制                                                                                                                                                                                                     |
-| userAgent    | string  | 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36' | Identifier included in HTTP request headers to specify the client.                                                                                                                                                                       |
-|              |         |                                                                                                                   | HTTP 请求头中的客户端标识符                                                                                                                                                                                                              |
+| enabled      | boolean | false                                                                                                             | キャッシュを有効または無効にします。                                                                                                                                                                                                               |
+| outDir       | string  | './dist/'                                                                                                         | 出力ディレクトリのパス。詳細は[こちら](https://docs.astro.build/en/reference/configuration-reference/#outdir "Configuration Reference")を参照してください。**Astroと揃えることで、画像最適化などの機能の恩恵を受けることができます。** |
+| cacheDir     | string  | './link-card/'                                                                                                    | キャッシュディレクトリのパス。`devMode`がtrueに設定されている場合、キャッシュされた画像への最終的なURLは`base + outDir + cacheDir`になります。それ以外の場合は`base + cacheDir`になります。                                                                       |
+| maxFileSize  | number  | 0                                                                                                                 | キャッシュする最大ファイルサイズ（バイト単位）。0で無制限。                                                                                                                                                                            |
+| maxCacheSize | number  | 0                                                                                                                 | キャッシュの合計最大サイズ（バイト単位）。0で無制限。                                                                                                                                                                              |
+| userAgent    | string  | 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36' | クライアントを指定するためにHTTPリクエストヘッダーに含まれる識別子。                                                                                                                                                                       |
 
-### Quick and Easy Options Setup  
-### 快速配置选项
+### 簡単なオプション設定
 
-This plugin uses `@fastify/deepmerge` to simplify options setup.  
-本插件使用 `@fastify/deepmerge` 简化选项配置。
+このプラグインは、オプション設定を簡素化するために`@fastify/deepmerge`を使用しています。
 
 <https://www.npmjs.com/package/@fastify/deepmerge>
 
-## HTML Structure for Styling  
-## 用于样式化的 HTML 结构
+## スタイリング用のHTML構造
 
-The styles are specified in `src/styles/link-card.css`, and the HTML is automatically generated. Below is an example structure to guide you when customizing the styles:  
-样式定义在 `src/styles/link-card.css` 中，HTML 会自动生成。以下是自定义样式时的参考结构：
+スタイルは`src/styles/link-card.css`で指定され、HTMLは自動的に生成されます。以下は、スタイルをカスタマイズする際の参考となる構造の例です。
 
 ```html
 <div class="link-card__container">

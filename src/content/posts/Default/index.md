@@ -1,7 +1,7 @@
 ---
-title: Simple Guides for Fuwari
+title: Fuwari シンプルガイド
 published: 1002-04-01
-description: "How to use this blog template."
+description: "このブログテンプレートの使い方"
 image: "./index.jpeg"
 tags: ["Fuwari", "Blogging", "Customization"]
 category: Default
@@ -9,14 +9,11 @@ draft: false
 series: Examples
 ---
 
-> Cover image source: [Source](https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/208fc754-890d-4adb-9753-2c963332675d/width=2048/01651-1456859105-(colour_1.5),girl,_Blue,yellow,green,cyan,purple,red,pink,_best,8k,UHD,masterpiece,male%20focus,%201boy,gloves,%20ponytail,%20long%20hair,.jpeg)
-> 封面图片来源：[来源](https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/208fc754-890d-4adb-9753-2c963332675d/width=2048/01651-1456859105-(colour_1.5),girl,_Blue,yellow,green,cyan,purple,red,pink,_best,8k,UHD,masterpiece,male%20focus,%201boy,gloves,%20ponytail,%20long%20hair,.jpeg)
+> カバー画像のソース: [ソース](https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/208fc754-890d-4adb-9753-2c963332675d/width=2048/01651-1456859105-(colour_1.5),girl,_Blue,yellow,green,cyan,purple,red,pink,_best,8k,UHD,masterpiece,male%20focus,%201boy,gloves,%20ponytail,%20long%20hair,.jpeg)
 
-This blog template is built with [Astro](https://astro.build/). For the things that are not mentioned in this guide, you may find the answers in the [Astro Docs](https://docs.astro.build/).
-此博客模板使用 [Astro](https://astro.build/) 构建。对于本指南未提及的内容，您可以在 [Astro 文档](https://docs.astro.build/)中找到答案。
+このブログテンプレートは [Astro](https://astro.build/) で構築されています。このガイドで言及されていないことについては、[Astro のドキュメント](https://docs.astro.build/) で答えが見つかるかもしれません。
 
-## Front-matter of Posts
-## 文章的前言配置(Front-matter)
+## 記事のFront-matter設定
 
 ```yaml
 ---
@@ -30,21 +27,19 @@ draft: false
 ---
 ```
 
-| Attribute     | Description                                                                                                                                                                                                 |
+| 属性          | 説明                                                                                                                                                                                                         |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `title`       | The title of the post. <br/> 文章的标题。                                                                                                                                                                 |
-| `published`   | The date the post was published. <br/> 文章发布的日期。                                                                                                                                                    |
-| `description` | A short description of the post. Displayed on index page. <br/> 文章的简短描述。显示在索引页上。                                                                                                           |
-| `image`       | The cover image path of the post.<br/>1. Start with `http://` or `https://`: Use web image<br/>2. Start with `/`: For image in `public` dir<br/>3. With none of the prefixes: Relative to the markdown file <br/> 文章的封面图片路径。<br/>1. 以 `http://` 或 `https://` 开头：使用网络图片<br/>2. 以 `/` 开头：指向 `public` 目录中的图片<br/>3. 无前缀：相对于 Markdown 文件的位置 |
-| `tags`        | The tags of the post. <br/> 文章的标签。                                                                                                                                                                  |
-| `category`    | The category of the post. <br/> 文章的分类。                                                                                                                                                             |
-| `draft`       | If this post is still a draft, which won't be displayed. <br/> 如果文章仍是草稿，则不会显示。                                                                                                           |
+| `title`       | 記事のタイトル。                                                                                                                                                                                                 |
+| `published`   | 記事の公開日。                                                                                                                                                                                                 |
+| `description` | 記事の短い説明。インデックスページに表示されます。                                                                                                                                                                          |
+| `image`       | 記事のカバー画像のパス。<br/>1. `http://` または `https://` で始まる場合：ウェブ画像を使用<br/>2. `/` で始まる場合：`public` ディレクトリ内の画像<br/>3. 上記の接頭辞がない場合：Markdownファイルからの相対パス                                     |
+| `tags`        | 記事のタグ。                                                                                                                                                                                                    |
+| `category`    | 記事のカテゴリ。                                                                                                                                                                                                 |
+| `draft`       | この記事がまだ下書きの場合、表示されません。                                                                                                                                                                             |
 
-## Where to Place the Post Files
-## 文章文件的存放位置
+## 記事ファイルの置き場所
 
-Your post files should be placed in `src/content/posts/` directory. You can also create sub-directories to better organize your posts and assets.
-您的文章文件应放置在 `src/content/posts/` 目录中。您也可以创建子目录以更好地组织文章和资源。
+記事ファイルは `src/content/posts/` ディレクトリに配置する必要があります。サブディレクトリを作成して、記事やアセットをより良く整理することもできます。
 
 ```
 src/content/posts/

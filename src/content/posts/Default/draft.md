@@ -1,5 +1,5 @@
 ---
-title: Draft Example
+title: ドラフトの例
 published: 1000-07-01
 image: "https://api.lxtu.cn/api.php?category=ecy"
 tags: [Markdown, Blogging, Demo]
@@ -8,14 +8,11 @@ draft: false
 series: Examples
 ---
 
-# This Article is a Draft
-# 本文是草稿
+# この記事はドラフトです
 
-This article is currently in a draft state and is not published. Therefore, it will not be visible to the general audience. The content is still a work in progress and may require further editing and review.
-本文目前处于草稿状态，尚未发布。因此，普通观众将无法看到。内容仍在进行中，可能需要进一步编辑和审查。
+この記事は現在ドラフト状態であり、公開されていません。そのため、一般の読者には表示されません。内容はまだ作成中であり、さらなる編集やレビューが必要な場合があります。
 
-When the article is ready for publication, you can update the "draft" field to "false" in the Frontmatter:
-当文章准备好发布时，您可以在 Frontmatter 中将 "draft" 字段更新为 "false"：
+記事を公開する準備ができたら、Frontmatter の "draft" フィールドを "false" に更新できます。
 
 ```markdown
 ---
@@ -25,4 +22,5 @@ tags: [Markdown, Blogging, Demo]
 category: Examples
 draft: false
 ---
-PS:虽然啊，但是啊，无奖竞猜我这个怎么发出来的
+```
+PS: それはそうと、どうやってこれを送ったか、当ててみてください（賞品はありません）。
