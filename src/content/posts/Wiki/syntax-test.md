@@ -27,5 +27,5 @@ YouTube動画を軽量な埋め込み形式で表示します。クリックす�
 
 2つの画像をスライダーで比較できます。
 
-::compare-image{before="./avatar.webp" after="./137103134master1200.jpg" label="改善前と改善後の比較"}
+::compare-image{before="https://sofia-luceat-project.github.io/avatar.webp" after="https://sofia-luceat-project.github.io/137103134master1200.jpg" label="改善前と改善後の比較"}
 
