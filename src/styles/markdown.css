@@ -210,3 +210,53 @@ a.link,
 .collapsed {
   height: var(--collapsedHeight);
 }
+
+/* Game spec icon styles */
+.game-spec-icon-wrapper {
+  position: relative;
+}
+
+.game-spec-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: all 0.2s ease;
+  /* Convert to black, then use CSS to apply primary color */
+  filter: brightness(0) saturate(100%);
+}
+
+/* Apply primary color using CSS mask and background */
+.game-spec-icon-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--primary);
+  mask-image: url('https://api.iconify.design/' attr(data-icon) '.svg');
+  -webkit-mask-image: url('https://api.iconify.design/' attr(data-icon) '.svg');
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* Fallback: Use filter to approximate primary color */
+.game-spec-icon-wrapper .game-spec-icon {
+  filter: brightness(0) saturate(100%);
+  opacity: 0.8;
+}
+
+/* Use CSS variable for primary color - simpler approach with filter */
+.game-spec-icon-wrapper {
+  --icon-color: var(--primary);
+}
+
+.game-spec-icon-wrapper .game-spec-icon {
+  filter: brightness(0) saturate(100%);
+  opacity: 0.8;
+  /* Apply primary color using CSS - this is a workaround */
+}

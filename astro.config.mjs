@@ -13,6 +13,7 @@ import rehypeComponents from "rehype-components";
 import rehypeKatex from "rehype-katex";
 import rehypeSlug from "rehype-slug";
 import remarkDirective from "remark-directive";
+import remarkDirectiveRehype from "remark-directive-rehype";
 import remarkGithubAdmonitionsToDirectives from "remark-github-admonitions-to-directives";
 import remarkMath from "remark-math";
 import remarkSectionize from "remark-sectionize";
@@ -27,7 +28,11 @@ import { pluginCustomCopyButton } from "./src/plugins/expressive-code/custom-cop
 import mdx from "@astrojs/mdx";
 import partytown from "@astrojs/partytown";
 import rehypeExternalLinks from "rehype-external-links";
+import { rehypeDirectiveToElement } from "./src/plugins/rehype-directive-to-element.mjs";
 import { LinkCardComponent } from "./src/plugins/rehype-component-link-card.mjs";
+import { GameSpecComponent } from "./src/plugins/rehype-component-game-spec.mjs";
+import { YoutubeComponent } from "./src/plugins/rehype-component-youtube.mjs";
+import { CompareImageComponent } from "./src/plugins/rehype-component-compare-image.mjs";
 
 // https://astro.build/config
 export default defineConfig({
@@ -137,12 +142,13 @@ export default defineConfig({
       remarkExcerpt,
       remarkGithubAdmonitionsToDirectives,
       remarkDirective,
-      remarkSectionize,
       parseDirectiveNode,
+      remarkSectionize,
     ],
     rehypePlugins: [
       rehypeKatex,
       rehypeSlug,
+      rehypeDirectiveToElement,
       [
         rehypeComponents,
         {
@@ -154,6 +160,9 @@ export default defineConfig({
             important: (x, y) => AdmonitionComponent(x, y, "important"),
             caution: (x, y) => AdmonitionComponent(x, y, "caution"),
             warning: (x, y) => AdmonitionComponent(x, y, "warning"),
+            "game-spec": GameSpecComponent,
+            youtube: YoutubeComponent,
+            "compare-image": CompareImageComponent,
           },
         },
       ],

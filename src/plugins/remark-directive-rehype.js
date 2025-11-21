@@ -1,8 +1,7 @@
-import { h } from "hastscript";
 import { visit } from "unist-util-visit";
 
 export function parseDirectiveNode() {
-	return (tree, { _data }) => {
+	return (tree) => {
 		visit(tree, (node) => {
 			if (
 				node.type === "containerDirective" ||
@@ -20,10 +19,11 @@ export function parseDirectiveNode() {
 					// Add a flag to the node to indicate that it has a directive label
 					node.attributes["has-directive-label"] = true;
 				}
-				const hast = h(node.name, node.attributes);
-
-				data.hName = hast.tagName;
-				data.hProperties = hast.properties;
+				
+				// Convert directive to HTML element with the directive name as tag name
+				// This allows rehype-components to match by tag name
+				data.hName = node.name;
+				data.hProperties = node.attributes;
 			}
 		});
 	};
