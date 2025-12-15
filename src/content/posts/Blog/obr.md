@@ -1,7 +1,11 @@
 ---
 title: OBR – Offline Browsing Reader
-published: true
-date: 2025-12-15
+published: 2025-11-13
+image: ""
+tags: [ブログ, リリース, アプリ, ブラウザ]
+category: Release
+draft: false
+series: ゲーム制作サークルの開発記録
 ---
 
 # 🌐 OBR  
