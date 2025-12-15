@@ -1,5 +1,7 @@
 ---
 title: OBR – Offline Browsing Reader
+published: true
+date: 2025-12-15
 ---
 
 # 🌐 OBR  
