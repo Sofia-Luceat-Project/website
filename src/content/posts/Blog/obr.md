@@ -1,6 +1,6 @@
 ---
 title: OBR – Offline Browsing Reader
-published: 2025-11-13
+published: 2025-12-15
 image: ""
 tags: [ブログ, リリース, アプリ, ブラウザ]
 category: Release
