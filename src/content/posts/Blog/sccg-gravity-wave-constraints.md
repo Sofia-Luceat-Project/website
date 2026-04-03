@@ -1,3 +1,13 @@
+---
+title: Constraints on a Scalar-Dependent Gravitational Coupling from Gravitational Wave Observations
+published: 2026-04-03
+image: ""
+tags: [ブログ, 研究]
+category: Science
+draft: false
+series: 個人的投稿
+---
+
 # Constraints on a Scalar-Dependent Gravitational Coupling from Gravitational Wave Observations
 
 ## Abstract
